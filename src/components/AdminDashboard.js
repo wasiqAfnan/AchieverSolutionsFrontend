@@ -1,10 +1,11 @@
 import React from 'react';
-import MiniDrawer from './MiniDrawer';
+import Drawer from './Drawer';
+
 
 export default function AdminDashboard() {
   return (
     <div>
-        <MiniDrawer/>
+        <Drawer/>
     </div>
   )
 }

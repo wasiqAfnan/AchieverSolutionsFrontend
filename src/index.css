@@ -37,4 +37,14 @@ code {
 .tableHead{
   font-weight: 500;
 }
+.formTable{
+ 
+  border-collapse: separate;
+  border-spacing: 0.5rem;
+  width:50%;
+
+}
+.formTableDetail{
+  text-align:left
+}
 

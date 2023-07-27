@@ -17,3 +17,20 @@ code {
   width:20vw;
   margin: 5vw auto;
 }
+.dashNavigate{
+  text-decoration: none;
+}
+.dashNavigateRoot{
+  text-decoration: none;
+  color:white;
+  font-weight: 400;
+}
+.addCourseForm{
+  margin:auto;
+  width:65vw;
+  /* border:2px solid blue; */
+}
+.tableHead{
+  font-weight: 500;
+}
+

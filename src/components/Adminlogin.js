@@ -7,11 +7,13 @@ import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { Slide, Zoom, Flip, Bounce } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Adminlogin() {
     const [userName, setUserName] = useState("");
     const [password, setpassword] = useState("");
+    const Navigate = useNavigate();
 
     const handleClick = () => {
 
@@ -66,7 +68,9 @@ export default function Adminlogin() {
                         theme: "light",
                         transition: Flip
                     });
-                        
+                    localStorage.setItem("user-info", JSON.stringify(response.data));
+                    Navigate('/dashboard');
+
                 }
                 else {
                     

@@ -19,6 +19,11 @@ import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import CampaignOutlinedIcon from '@mui/icons-material/CampaignOutlined';
 import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
+import { useNavigate} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import Adduser from './Addcourses';
+import Userlist from './Userlist';
 
 const drawerWidth = 240;
 
@@ -137,7 +142,7 @@ export default function Try() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Admin Dashboard
+            <Link to="/dashboard" className="dashNavigateRoot">Admin Dashboard</Link>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -167,8 +172,8 @@ export default function Try() {
           <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
             <Typography> User</Typography> &nbsp;&nbsp;&nbsp;<PersonOutlinedIcon/>
           </AccordionSummary>
-          <AccordionDetails>
-            List of Users
+          <AccordionDetails >
+            <Link to="/dashboard/userlist" className='dashNavigate'>List of Users</Link>
           </AccordionDetails>
         </Accordion>
 
@@ -176,11 +181,11 @@ export default function Try() {
           <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
             <Typography>Courses</Typography>&nbsp;&nbsp;&nbsp;<AutoStoriesOutlinedIcon/>
           </AccordionSummary>
-          <AccordionDetails>
-            List of Courses
+          <AccordionDetails className='dashNavigate'>
+             <Link to="/dashboard/courselist" className='dashNavigate'>List of Courses</Link>
           </AccordionDetails>
-          <AccordionDetails>
-            Add Courses
+          <AccordionDetails className='dashNavigate'>
+             <Link to="/dashboard/addcourses" className='dashNavigate'>Add Courses</Link>
           </AccordionDetails>
         </Accordion>
 
@@ -188,10 +193,10 @@ export default function Try() {
           <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
             <Typography>Notices</Typography>&nbsp;&nbsp;&nbsp;<CampaignOutlinedIcon/>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails className='dashNavigate'>
             List of Notices
           </AccordionDetails>
-          <AccordionDetails>
+          <AccordionDetails className='dashNavigate'>
             Add Notices
           </AccordionDetails>
         </Accordion>
@@ -200,10 +205,10 @@ export default function Try() {
           <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
             <Typography>Roports</Typography>&nbsp;&nbsp;&nbsp;<DescriptionOutlinedIcon/>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails className='dashNavigate'>
             Reviews
           </AccordionDetails>
-          <AccordionDetails>
+          <AccordionDetails className='dashNavigate'>
             Downloads
           </AccordionDetails>
         </Accordion>
@@ -211,8 +216,9 @@ export default function Try() {
       </Drawer>
       <Main open={open}>
       <DrawerHeader />
-        
+        <Outlet/>
       </Main>
     </Box>
+
   );
 }

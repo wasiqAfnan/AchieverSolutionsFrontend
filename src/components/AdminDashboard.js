@@ -1,11 +1,9 @@
 import React from 'react';
-import Drawer from './Drawer';
-
 
 export default function AdminDashboard() {
   return (
     <div>
-        <Drawer/>
+        <h1>Hello👋  Admin</h1>
     </div>
   )
 }

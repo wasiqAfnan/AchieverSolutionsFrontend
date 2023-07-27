@@ -19,6 +19,10 @@ code {
 }
 .dashNavigate{
   text-decoration: none;
+  color:rgb(243, 8, 8);
+}
+.dashNavigate:hover{
+  color:rgb(215, 159, 159);
 }
 .dashNavigateRoot{
   text-decoration: none;

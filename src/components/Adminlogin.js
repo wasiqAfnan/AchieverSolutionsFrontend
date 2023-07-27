@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
@@ -14,6 +14,13 @@ export default function Adminlogin() {
     const [userName, setUserName] = useState("");
     const [password, setpassword] = useState("");
     const Navigate = useNavigate();
+
+    useEffect(() => {
+        if (localStorage.getItem("user-info")) {
+          Navigate("/dashboard/dashboardhome");
+        }
+        }
+    )
 
     const handleClick = () => {
 

@@ -25,24 +25,6 @@ export default function AddNotice() {
           <tbody>
             <tr >
               <td className="formTableDetail">
-                <label style={{ marginTop: "3px" }}>Notice No</label>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <TextField
-                  fullWidth
-                  required
-                  id="outlined-required"
-                  label="Course ID"
-                  value={noticeId}
-                  onChange={(e)=>{setNoticeId(e.target.value)}}
-                />
-              </td>
-            </tr>
-
-            <tr >
-              <td className="formTableDetail">
                 <label style={{ marginTop: "3px" }}>Notice Title</label>
               </td>
             </tr>

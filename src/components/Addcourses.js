@@ -12,17 +12,17 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 
 export default function Addcourses() {
-  const [cId, setCid] = useState('');
-  const [cName, setCname] = useState('');
-  const [cDur, setCdur] = useState('Course Duration');
-  const [cCertify, setCcertify] = useState('');
-  const [cDesc, setCdesc] = useState('');
-  const [cPhoto, setCphoto] = useState('');
-  const [cNotes, setCnotes] = useState('');
-  const [cVideo, setCvideo] = useState('');
-  const [cPhotoName, setPhotoName] = useState('');
-  const [cNotesName, setNotesName] = useState('');
-  const [cVideoName, setVideoName] = useState('');
+  const [courseCode, setCourseCode] = useState('');
+  const [courseName, setCourseName] = useState('');
+  const [courseDuration, setCourseDuration] = useState('Course Duration');
+  const [courseCertification, setCourseCertification] = useState('');
+  const [courseDescription, setCourseDescription] = useState('');
+  const [coursePhoto, setCoursePhoto] = useState('');
+  const [courseNotes, setCourseNotes] = useState('');
+  const [courseVideo, setCourseVideo] = useState('');
+  const [coursePhotoName, setPhotoName] = useState('');
+  const [courseNotesName, setNotesName] = useState('');
+  const [courseVideoName, setVideoName] = useState('');
   const [isHovering, setIsHovering] = useState(false);
 
 
@@ -38,45 +38,45 @@ export default function Addcourses() {
 
   // write logic to send data to the database in the below function
   const handleSubmit = () => {
-    if (cId === '') {
+    if (courseCode === '') {
       NotificationManager.error('Enter Course ID');
       return false;
     }
-    if (cName === '') {
+    if (courseName === '') {
       NotificationManager.error('Enter Course Name');
       return false;
     }
-    if (cDur !== 1 && cDur !== 2 && cDur !== 3 && cDur !== 6 && cDur !== 12) {
+    if (courseDuration !== 1 && courseDuration !== 2 && courseDuration !== 3 && courseDuration !== 6 && courseDuration !== 12) {
       NotificationManager.error('Enter Course Duration');
       return false;
     }
-    if (cCertify === '') {
+    if (courseCertification === '') {
       NotificationManager.error('Select an option in Course Certify');
       return false;
     }
-    if(cDesc === ''){
+    if(courseDescription === ''){
       NotificationManager.error('Enter Course Description');
       return false;
     }
-    if (cPhotoName === '') {
+    if (coursePhotoName === '') {
       NotificationManager.error('Upload a course Photo');
       return false;
     }
-    if (cNotesName === '') {
+    if (courseNotesName === '') {
       NotificationManager.error('Upload course Notes');
       return false;
     }
     
 
     let data = {
-      cid: cId,
-      cname: cName,
-      cdur: cDur,
-      ccertify: cCertify,
-      cdesc: cDesc,
-      cphoto: cPhoto,
-      cnotes: cNotes,
-      cvideo: cVideo,
+      courseCode: courseCode,
+      courseName: courseName,
+      courseDuration: courseDuration,
+      courseCertification: courseCertification,
+      courseDescription: courseDescription,
+      coursePhoto: coursePhoto,
+      courseNotes: courseNotes,
+      courseVideo: courseVideo,
     }
 
     console.log(data);
@@ -90,7 +90,7 @@ export default function Addcourses() {
           <tbody>
             <tr className="formTableRow">
               <td className="formTableDetail">
-                <label className="formLabel">Course ID</label>
+                <label className="formLabel">Course Code</label>
               </td>
             </tr>
             <tr>
@@ -100,9 +100,9 @@ export default function Addcourses() {
                   fullWidth
                   required
                   id="outlined-required"
-                  label="Course ID"
-                  value={cId}
-                  onChange={(e) => { setCid(e.target.value) }}
+                  label="Course Code"
+                  value={courseCode}
+                  onChange={(e) => { setCourseCode(e.target.value) }}
                 />
               </td>
             </tr>
@@ -119,8 +119,8 @@ export default function Addcourses() {
                   required
                   id="outlined-required2"
                   label="Course Name"
-                  value={cName}
-                  onChange={(e) => { setCname(e.target.value) }}
+                  value={courseName}
+                  onChange={(e) => { setCourseName(e.target.value) }}
                 />
               </td>
             </tr>
@@ -137,8 +137,8 @@ export default function Addcourses() {
                   fullWidth
                   id="demo-simple-select"
                   displayEmpty
-                  value={cDur}
-                  onChange={(e) => { setCdur(e.target.value) }}
+                  value={courseDuration}
+                  onChange={(e) => { setCourseDuration(e.target.value) }}
                 >
                   <MenuItem value=""><em>Select</em></MenuItem>
                   <MenuItem value={1}>One Month</MenuItem>
@@ -162,8 +162,8 @@ export default function Addcourses() {
                   fullWidth
                   id="demo-simple-select"
                   displayEmpty
-                  value={cCertify}
-                  onChange={(e) => { setCcertify(e.target.value) }}
+                  value={courseCertification}
+                  onChange={(e) => { setCourseCertification(e.target.value) }}
                 >
                   <MenuItem value=""><em>Select</em></MenuItem>
                   <MenuItem value={"yes"}>Yes</MenuItem>
@@ -185,8 +185,8 @@ export default function Addcourses() {
                   label="Course Description"
                   multiline
                   maxRows={10}
-                  value={cDesc}
-                  onChange={(e) => { setCdesc(e.target.value) }}
+                  value={courseDescription}
+                  onChange={(e) => { setCourseDescription(e.target.value) }}
                 />
               </td>
             </tr>
@@ -210,11 +210,11 @@ export default function Addcourses() {
                       Upload File
                       <input
                         type="file"
-                        name="cPhoto"
+                        name="coursePhoto"
                         accept="image/*"
                         onChange={(e) => {
                           if (e.target.files.length !== 0) {
-                            setCphoto(URL.createObjectURL(e.target.files[0]));
+                            setCoursePhoto(URL.createObjectURL(e.target.files[0]));
                             setPhotoName(e.target.files[0].name)
                           }
                         }}
@@ -232,11 +232,11 @@ export default function Addcourses() {
                       Upload File
                       <input
                         type="file"
-                        name="cNotes"
+                        name="courseNotes"
                         accept="application/pdf"
                         onChange={(e) => {
                           if (e.target.files.length !== 0) {
-                            setCnotes(URL.createObjectURL(e.target.files[0]));
+                            setCourseNotes(URL.createObjectURL(e.target.files[0]));
                             setNotesName(e.target.files[0].name)
                           }
                         }}
@@ -254,11 +254,11 @@ export default function Addcourses() {
                       Upload File
                       <input
                         type="file"
-                        name="cNotes"
+                        name="courseNotes"
                         accept="video/*"
                         onChange={(e) => {
                           if (e.target.files.length !== 0) {
-                            setCvideo(URL.createObjectURL(e.target.files[0]));
+                            setCourseVideo(URL.createObjectURL(e.target.files[0]));
                             setVideoName(e.target.files[0].name)
                           }
                         }}
@@ -272,9 +272,9 @@ export default function Addcourses() {
             <tr>
               <td>
                 <div style={{ display: "flex", gap: "50px", width: "28%" }}>
-                  <img style={{ width: "100%", height: "100%"}} src={cPhoto} />
-                  <p style={{ width: "100%", height: "50%", marginLeft: "2vw" }}>{cNotesName}</p>
-                  <p style={{ width: "100%", height: "50%", marginLeft: "5vw" }}>{cVideoName}</p>
+                  <img style={{ width: "100%", height: "100%"}} src={coursePhoto} />
+                  <p style={{ width: "100%", height: "50%", marginLeft: "2vw" }}>{courseNotesName}</p>
+                  <p style={{ width: "100%", height: "50%", marginLeft: "5vw" }}>{courseVideoName}</p>
                 </div>
               </td>
 

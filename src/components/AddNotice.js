@@ -20,7 +20,7 @@ export default function AddNotice() {
   return (
     <div>
       <h1>Add Notices</h1>
-      <form style={{ display: "flex", justifyContent: "center", fontFamily: "Poppins", fontSize: "1.0vw" }}>
+      <form style={{ display: "flex", justifyContent: "center", fontFamily: "Poppins", fontSize: "1.2rem" }}>
         <table className="formTable">
           <tbody>
             <tr >

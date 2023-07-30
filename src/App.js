@@ -10,7 +10,8 @@ import NoticeList from './components/NoticeList';
 import AddNotices from './components/AddNotice';
 import Reviews from './components/Reviews';
 import Downloads from './components/Downloads';
-import { BrowserRouter,Routes, Route } from "react-router-dom"
+import { BrowserRouter,Routes, Route } from "react-router-dom";
+import Form from './components/Form'
 
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
           </Route> 
         </Routes>
       </BrowserRouter>
+      
+      
     </div>
   );
 }

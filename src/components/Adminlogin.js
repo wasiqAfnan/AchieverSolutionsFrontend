@@ -58,7 +58,7 @@ export default function Adminlogin() {
             password: password
         }
 
-        axios.post("http://localhost:8080/api/login", data)
+        axios.post("http://localhost:8080/api/admin/allAdmin", data)
             .then(function (response) {
                 console.log('response', response);
 

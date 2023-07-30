@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
 
 code {
@@ -51,7 +52,97 @@ code {
 }
 .formLabel{
   margin-top: 3px;
+  font-size: 1.1rem;
+  font-family: 'Rubik', sans-serif;
 }
 .formTableDetail{
   text-align:left
+}
+
+table{
+  border-collapse: separate;
+  border-spacing: 0px 5px;
+}
+
+.addCourse input[type=text] {
+  width: 75%;
+  border:none;
+  border-bottom:.5px solid grey;
+  transition: ease-in-out, .35s ease-in-out;
+  padding:10px;
+  background-color:#f5f5f5;
+  margin-bottom: 15px;
+}
+
+.addCourse input[type=text]:focus {
+  width: 100%; 
+  outline:auto;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  background-color:rgb(247, 240, 240);
+  color:rgb(0, 0, 0);
+}
+
+.addCourse textarea{
+  width: 80%;
+  transition:ease-in-out, .35s ease-in-out;
+  outline:none;
+  border:none;
+  border-bottom: 1px solid black;
+  resize: none;
+  background-color:#f5f5f5;
+}
+.addCourse textarea:focus{
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: rgb(247, 240, 240);
+  font-size: 16px;
+  outline:auto;
+  transition:ease-in-out, .35s ease-in-out
+}
+.addCourse select{
+  background-color: white;
+  border: thin solid rgb(0, 0, 0);
+  border-radius: 4px;
+  width:85%;
+  padding:.5rem;
+  transition:ease-in-out, .3s ease-in-out;
+  text-align: center;
+  -webkit-appearance: none;
+}
+.addCourse select:focus{
+  width: 100%; 
+  outline:auto;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  background-color:rgb(247, 240, 240);
+  color:rgb(0, 0, 0);
+}
+.btn{
+  width:50%;
+  border:1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  background-color: rgb(141, 141, 247);
+  color:white;
+  transition:ease-in-out, .35s ease-in-out;
+  font-size:1rem;
+}
+.btn:hover{
+ 
+  width:80%;
+  /* padding:5px; */
+  border:1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  background-color: f5f5f5;
+  color:rgb(0, 0, 0);
+}
+.btnSubmit{
+  font-size:1.5rem;
+  width:60%;
 }
